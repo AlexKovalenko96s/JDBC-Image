@@ -19,6 +19,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import com.mysql.jdbc.PreparedStatement;
 
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -88,14 +89,15 @@ public class Controller {
 			img = myRs.getBlob("pic");
 			imgData = img.getBytes(1, (int) img.length());
 			
+			
+			String dirName="C:\\Users\\KLUBnyaKprO\\Desktop";
+			BufferedImage imag=ImageIO.read(new ByteArrayInputStream(imgData));
+			imv.setImage(SwingFXUtils.toFXImage(imag, null));
+			
 			/*
 			 * извлекалка на рабочий стол
 			 */	
-			String dirName="C:\\Users\\KLUBnyaKprO\\Desktop";
-			BufferedImage imag=ImageIO.read(new ByteArrayInputStream(imgData));
-			//Image i = (Image) ImageIO.getImageReaders(imag);
-			//imv.setImage(i);
-			ImageIO.write(imag, "jpg", new File(dirName,"&"+myRs.getString("name")+".jpg"));	
+			//ImageIO.write(imag, "jpg", new File(dirName,"&"+myRs.getString("name")+".jpg"));	
 			/* 
 			 */
 			

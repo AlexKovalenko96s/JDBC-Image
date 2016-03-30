@@ -34,12 +34,21 @@ public class Controller {
 	@FXML
 	TextField textNAME;
 	@FXML
+	TextField textADDRESS;
+	@FXML
+	TextField textNUMBER;
+	@FXML
+	TextField textWEB;
+	@FXML
 	TextArea area;
 	@FXML
-	ImageView imv;
-	String s;
+	ImageView imv_pic;
+	@FXML
+	ImageView imv_map;
+	String s_pic;
+	String s_map;
 
-	public void browse(ActionEvent e) {
+	public void browse_PIC(ActionEvent e) {
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("*.IMAGE", "jpg", "gif", "png");
@@ -50,8 +59,27 @@ public class Controller {
 			String path = selectedFile.getAbsolutePath();
 			System.out.println(path);
 			String ss = path.substring(path.indexOf("&"));
-			s = path;
-			imv.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("/res/" + ss)));
+			s_pic = path;
+			imv_pic.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("/res/img/" + ss)));
+
+		} else if (result == JFileChooser.CANCEL_OPTION) {
+			System.out.println("No Data");
+		}
+	}
+	
+	public void browse_MAP(ActionEvent e) {
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("*.IMAGE", "jpg", "gif", "png");
+		fileChooser.addChoosableFileFilter(filter);
+		int result = fileChooser.showSaveDialog(null);
+		if (result == JFileChooser.APPROVE_OPTION) {
+			File selectedFile = fileChooser.getSelectedFile();
+			String path = selectedFile.getAbsolutePath();
+			System.out.println(path);
+			String ss = path.substring(path.indexOf("&"));
+			s_map = path;
+			imv_map.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("/res/map/" + ss)));
 
 		} else if (result == JFileChooser.CANCEL_OPTION) {
 			System.out.println("No Data");
@@ -61,12 +89,16 @@ public class Controller {
 	public void add(ActionEvent e) throws SQLException, FileNotFoundException {
 		Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost/freemove", "root", "root");
 		java.sql.PreparedStatement myStmt = myConn
-				.prepareStatement("insert into cats(id,name,area,pic) values (?,?,?,?)");
-		InputStream is = new FileInputStream(new File(s));
+				.prepareStatement("insert into must_see(id,name,address,number,web,pic,map) values (?,?,?,?,?,?,?)");
+		InputStream is_pic = new FileInputStream(new File(s_pic));
+		InputStream is_map = new FileInputStream(new File(s_map));
 		myStmt.setString(1, textID.getText());
 		myStmt.setString(2, textNAME.getText());
-		myStmt.setString(3, area.getText());
-		myStmt.setBlob(4, is);
+		myStmt.setString(3, textADDRESS.getText());
+		myStmt.setString(4, textNUMBER.getText());
+		myStmt.setString(5, textWEB.getText());
+		myStmt.setBlob(6, is_pic);
+		myStmt.setBlob(7, is_map);
 		myStmt.executeUpdate();
 		System.out.println("Complet!");
 	}
@@ -75,25 +107,32 @@ public class Controller {
 
 		Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost/freemove", "root", "root");
 		String n = textNAME.getText();
-		java.sql.PreparedStatement ps = myConn.prepareStatement("select * from cats where name=?");
+		java.sql.PreparedStatement ps = myConn.prepareStatement("select * from must_see where name=?");
 		ps.setString(1, n);
 		ResultSet myRs = ps.executeQuery();
 
-		Blob img;
-		byte[] imgData = null;
+		Blob img_pic;
+		Blob img_map;
+		byte[] imgData_pic = null;
+		byte[] imgData_map = null;
 		
 		while (myRs.next()) {
 			textID.setText(myRs.getString("id"));
 			textNAME.setText(myRs.getString("name"));
-			area.setText(myRs.getString("area"));
-			img = myRs.getBlob("pic");
-			imgData = img.getBytes(1, (int) img.length());
+			textADDRESS.setText(myRs.getString("addres"));
+			textNUMBER.setText(myRs.getString("number"));
+			textWEB.setText(myRs.getString("web"));
+			img_pic = myRs.getBlob("pic");
+			img_map = myRs.getBlob("map");
+			imgData_pic = img_pic.getBytes(1, (int) img_pic.length());
+			imgData_map = img_map.getBytes(1, (int) img_map.length());
 			
+			//String dirName="C:\\Users\\KLUBnyaKprO\\Desktop";
 			
-			String dirName="C:\\Users\\KLUBnyaKprO\\Desktop";
-			BufferedImage imag=ImageIO.read(new ByteArrayInputStream(imgData));
-			imv.setImage(SwingFXUtils.toFXImage(imag, null));
-			
+			BufferedImage imag_pic =ImageIO.read(new ByteArrayInputStream(imgData_pic));
+			BufferedImage imag_map =ImageIO.read(new ByteArrayInputStream(imgData_map));
+			imv_pic.setImage(SwingFXUtils.toFXImage(imag_pic, null));
+			imv_map.setImage(SwingFXUtils.toFXImage(imag_map, null));
 			/*
 			 * извлекалка на рабочий стол
 			 */	
@@ -105,4 +144,6 @@ public class Controller {
 		}
 		System.out.println("complet");
 	}
+	
+	
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.kas.JDBC_Image.Controller">
+   <children>
+      <SplitPane dividerPositions="0.5175879396984925" layoutX="108.0" layoutY="100.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane fx:id="pane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <ImageView fx:id="imv" fitHeight="203.0" fitWidth="398.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Button layoutX="24.0" layoutY="125.0" mnemonicParsing="false" onAction="#browse" text="Browse" />
+                  <Button layoutX="104.0" layoutY="125.0" mnemonicParsing="false" onAction="#add" text="ADD" />
+                  <ScrollPane layoutX="199.0" layoutY="13.0" prefHeight="163.0" prefWidth="181.0">
+                     <content>
+                        <TextArea fx:id="area" prefHeight="162.0" prefWidth="181.0" />
+                     </content>
+                  </ScrollPane>
+                  <TextField fx:id="textID" layoutX="14.0" layoutY="38.0" />
+                  <TextField fx:id="textNAME" layoutX="14.0" layoutY="82.0" />
+                  <Button layoutX="6.0" layoutY="163.0" mnemonicParsing="false" onAction="#see" text="beta" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

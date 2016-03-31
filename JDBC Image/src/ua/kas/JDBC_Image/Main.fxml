@@ -56,6 +56,8 @@
                   <TextField fx:id="textWEB" layoutX="199.0" layoutY="125.0" promptText="web" />
                   <TextField fx:id="textNUMBER" layoutX="199.0" layoutY="82.0" promptText="number" />
                   <Button layoutX="95.0" layoutY="117.0" mnemonicParsing="false" onAction="#browse_MAP" text="Browse MAP" />
+                  <TextField fx:id="intRATING" layoutX="199.0" layoutY="151.0" prefHeight="25.0" prefWidth="55.0" promptText="rating" />
+                  <TextField fx:id="intRATINGK" layoutX="293.0" layoutY="151.0" prefHeight="25.0" prefWidth="55.0" promptText="ratingK" />
                </children>
             </AnchorPane>
         </items>

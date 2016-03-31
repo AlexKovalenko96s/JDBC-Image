@@ -40,7 +40,9 @@ public class Controller {
 	@FXML
 	TextField textWEB;
 	@FXML
-	TextArea area;
+	TextField intRATING;
+	@FXML
+	TextField intRATINGK;
 	@FXML
 	ImageView imv_pic;
 	@FXML
@@ -89,7 +91,7 @@ public class Controller {
 	public void add(ActionEvent e) throws SQLException, FileNotFoundException {
 		Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost/freemove", "root", "root");
 		java.sql.PreparedStatement myStmt = myConn
-				.prepareStatement("insert into must_see(id,name,address,number,web,pic,map) values (?,?,?,?,?,?,?)");
+				.prepareStatement("insert into must_see(id,name,address,number,web,rating,ratingK,pic,map) values (?,?,?,?,?,?,?,?,?)");
 		InputStream is_pic = new FileInputStream(new File(s_pic));
 		InputStream is_map = new FileInputStream(new File(s_map));
 		myStmt.setString(1, textID.getText());
@@ -97,8 +99,10 @@ public class Controller {
 		myStmt.setString(3, textADDRESS.getText());
 		myStmt.setString(4, textNUMBER.getText());
 		myStmt.setString(5, textWEB.getText());
-		myStmt.setBlob(6, is_pic);
-		myStmt.setBlob(7, is_map);
+		myStmt.setString(6, intRATING.getText());
+		myStmt.setString(7, intRATINGK.getText());
+		myStmt.setBlob(8, is_pic);
+		myStmt.setBlob(9, is_map);
 		myStmt.executeUpdate();
 		System.out.println("Complet!");
 	}

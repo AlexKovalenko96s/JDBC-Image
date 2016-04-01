@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.kas.JDBC_Image.Controler_pic">
+   <children>
+      <ImageView fx:id="imv1" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imv2" fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imv3" fitHeight="150.0" fitWidth="200.0" layoutX="586.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="88.0" layoutY="164.0" mnemonicParsing="false" onAction="#select_1" text="Select_1" />
+      <Button layoutX="374.0" layoutY="164.0" mnemonicParsing="false" onAction="#select_2" text="Select_2" />
+      <Button layoutX="660.0" layoutY="164.0" mnemonicParsing="false" onAction="#select_3" text="Select_3" />
+      <ImageView fx:id="imv4" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imv5" fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imv6" fitHeight="150.0" fitWidth="200.0" layoutX="586.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="88.0" layoutY="363.0" mnemonicParsing="false" onAction="#select_4" text="Select_4" />
+      <Button layoutX="374.0" layoutY="363.0" mnemonicParsing="false" onAction="#select_5" text="Select_5" />
+      <Button layoutX="660.0" layoutY="363.0" mnemonicParsing="false" onAction="#select_6" text="Select_6" />
+      <ImageView fx:id="imv7" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imv8" fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imv9" fitHeight="150.0" fitWidth="200.0" layoutX="586.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="88.0" layoutY="567.0" mnemonicParsing="false" onAction="#select_7" text="Select_7" />
+      <Button layoutX="374.0" layoutY="567.0" mnemonicParsing="false" onAction="#select_8" text="Select_8" />
+      <Button layoutX="660.0" layoutY="567.0" mnemonicParsing="false" onAction="#select_9" text="Select_9" />
+      <TextField fx:id="textID" layoutX="322.0" layoutY="611.0" prefHeight="25.0" prefWidth="78.0" promptText="id" />
+      <Button layoutX="407.0" layoutY="611.0" mnemonicParsing="false" onAction="#add" text="ADD" />
+   </children>
+</AnchorPane>

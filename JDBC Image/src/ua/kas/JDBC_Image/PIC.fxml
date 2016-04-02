@@ -4,6 +4,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.kas.JDBC_Image.Controler_pic">
    <children>
@@ -27,5 +28,10 @@
       <Button layoutX="660.0" layoutY="567.0" mnemonicParsing="false" onAction="#select_9" text="Select_9" />
       <TextField fx:id="textID" layoutX="322.0" layoutY="611.0" prefHeight="25.0" prefWidth="78.0" promptText="id" />
       <Button layoutX="407.0" layoutY="611.0" mnemonicParsing="false" onAction="#add" text="ADD" />
+      <Button layoutX="14.0" layoutY="611.0" mnemonicParsing="false" onAction="#back" text="←Back">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -7,21 +7,21 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.kas.JDBC_Image.Controller">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.kas.JDBC_Image.Controller">
    <children>
-      <SplitPane dividerPositions="0.5" layoutX="108.0" layoutY="100.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.5020080321285141" orientation="VERTICAL" prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane fx:id="pane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <AnchorPane fx:id="pane" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="698.0">
                <children>
                   <SplitPane dividerPositions="0.5" layoutX="117.0" layoutY="22.0" prefHeight="196.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <ScrollPane layoutX="-2.0" layoutY="-3.0" prefHeight="200.0" prefWidth="200.0">
+                              <ScrollPane layoutX="-2.0" layoutY="-3.0" prefHeight="246.0" prefWidth="345.0">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="245.0" prefWidth="346.0">
                                        <children>
-                                          <ImageView fx:id="imv_pic" fitHeight="184.0" fitWidth="185.0" layoutX="1.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fx:id="imv_pic" fitHeight="229.0" fitWidth="328.0" layoutX="1.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
                                        </children>
                                     </AnchorPane>
                                 </content>
@@ -30,11 +30,11 @@
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <ScrollPane layoutX="-2.0" layoutY="-3.0" prefHeight="200.0" prefWidth="200.0">
+                              <ScrollPane layoutX="-2.0" layoutY="-3.0" prefHeight="246.0" prefWidth="345.0">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="247.0" prefWidth="345.0">
                                        <children>
-                                          <ImageView fx:id="imv_map" fitHeight="184.0" fitWidth="185.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fx:id="imv_map" fitHeight="230.0" fitWidth="329.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
                                        </children>
                                     </AnchorPane>
                                 </content>
@@ -47,18 +47,19 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Button layoutX="14.0" layoutY="117.0" mnemonicParsing="false" onAction="#browse_PIC" text="Browse PIC" />
-                  <Button layoutX="94.0" layoutY="151.0" mnemonicParsing="false" onAction="#add" prefHeight="25.0" prefWidth="83.0" text="ADD" />
-                  <TextField fx:id="textID" layoutX="14.0" layoutY="38.0" promptText="id" />
-                  <TextField fx:id="textNAME" layoutX="14.0" layoutY="82.0" promptText="name" />
-                  <Button layoutX="12.0" layoutY="151.0" mnemonicParsing="false" onAction="#see" prefHeight="25.0" prefWidth="75.0" text="See" />
-                  <TextField fx:id="textADDRESS" layoutX="199.0" layoutY="38.0" promptText="address" />
-                  <TextField fx:id="textWEB" layoutX="199.0" layoutY="125.0" promptText="web" />
-                  <TextField fx:id="textNUMBER" layoutX="199.0" layoutY="82.0" promptText="number" />
-                  <Button layoutX="95.0" layoutY="117.0" mnemonicParsing="false" onAction="#browse_MAP" text="Browse MAP" />
-                  <TextField fx:id="intRATING" layoutX="199.0" layoutY="151.0" prefHeight="25.0" prefWidth="55.0" promptText="rating" />
-                  <TextField fx:id="intRATINGK" layoutX="254.0" layoutY="151.0" prefHeight="25.0" prefWidth="55.0" promptText="ratingK" />
-                  <Button layoutX="309.0" layoutY="151.0" mnemonicParsing="false" onAction="#pic" prefHeight="25.0" prefWidth="39.0" text="PIC" />
+                  <Button layoutX="336.0" layoutY="133.0" mnemonicParsing="false" onAction="#browse_PIC" text="Browse PIC" />
+                  <Button layoutX="416.0" layoutY="167.0" mnemonicParsing="false" onAction="#add" prefHeight="25.0" prefWidth="83.0" text="ADD" />
+                  <TextField fx:id="textID" layoutX="336.0" layoutY="54.0" promptText="id" />
+                  <TextField fx:id="textNAME" layoutX="336.0" layoutY="98.0" promptText="name" />
+                  <Button layoutX="334.0" layoutY="167.0" mnemonicParsing="false" onAction="#see" prefHeight="25.0" prefWidth="75.0" text="See" />
+                  <TextField fx:id="textADDRESS" layoutX="521.0" layoutY="54.0" promptText="address" />
+                  <TextField fx:id="textWEB" layoutX="521.0" layoutY="141.0" promptText="web" />
+                  <TextField fx:id="textNUMBER" layoutX="521.0" layoutY="98.0" promptText="number" />
+                  <Button layoutX="417.0" layoutY="133.0" mnemonicParsing="false" onAction="#browse_MAP" text="Browse MAP" />
+                  <TextField fx:id="intRATING" layoutX="521.0" layoutY="167.0" prefHeight="25.0" prefWidth="55.0" promptText="rating" />
+                  <TextField fx:id="intRATINGK" layoutX="576.0" layoutY="167.0" prefHeight="25.0" prefWidth="55.0" promptText="ratingK" />
+                  <Button layoutX="631.0" layoutY="167.0" mnemonicParsing="false" onAction="#pic" prefHeight="25.0" prefWidth="39.0" text="PIC" />
+                  <Button layoutX="61.0" layoutY="46.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="149.0" text="Back" />
                </children>
             </AnchorPane>
         </items>

@@ -152,7 +152,6 @@ public class Controller {
 	public void pic(ActionEvent e) throws IOException{
 		
 		Scene pic_scene = new Scene(FXMLLoader.load(getClass().getResource("PIC.fxml")));
-		pic_scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		app_stage.setScene(pic_scene);
 		app_stage.show();

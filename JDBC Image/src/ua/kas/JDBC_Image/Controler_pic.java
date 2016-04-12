@@ -315,7 +315,6 @@ public class Controler_pic implements Initializable{
 	
 	public void back(ActionEvent e) throws IOException{
 		Scene main_scene = new Scene(FXMLLoader.load(getClass().getResource("Main.fxml")));
-		main_scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		app_stage.setScene(main_scene);
 		app_stage.show();
